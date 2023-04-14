@@ -1,8 +1,10 @@
 # TNTFS
 
-MacOS M1 开源NTFS
+MacOS M1 开源 NTFS 文件挂载软件
 
-Python3.10 使用 py2app 打包编译
+解决 MacOS 下 NTFS 文件系统无法写入问题
+
+Python3.10 使用 py2ap 打包编译
 
 理论上 MacOS 全系列通用
 
