@@ -156,6 +156,6 @@ def _setup_openssl():
 _setup_openssl()
 
 
-DEFAULT_SCRIPT='bak.py'
+DEFAULT_SCRIPT='ntfs.py'
 SCRIPT_MAP={}
 _run()
