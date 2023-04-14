@@ -29,4 +29,4 @@ brew install macfuse
 
 #### PS
 
-TNTFS.app 是打包好的程序，可直接运行。
+TNTFS.app.zip 是打包好的程序，下载后解压，可直接运行。
