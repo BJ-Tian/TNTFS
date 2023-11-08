@@ -18,7 +18,7 @@ OPTIONS = {
         'CFBundleVersion': '0.0.2',     # 应用版本号
         'CFBundleIdentifier' : 'TNTFS', # 应用包名、唯一标识
         'NSHumanReadableCopyright': 'Copyright © 2023 BJ-Tian. All rights reserved.',   # 可读版权
-        'includes': ['subprocess', 'tkinter.*','tkinter.ttk']      # 第三方库放在这里。
+        'includes': ['subprocess','time','os','tkinter.*','tkinter.ttk']      # 第三方库放在这里。
     }
 }
 
