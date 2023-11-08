@@ -65,4 +65,3 @@ FeetToMeters(root)
 root.mainloop()
 
 
-
