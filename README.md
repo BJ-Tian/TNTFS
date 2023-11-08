@@ -1,12 +1,26 @@
 # TNTFS
 
-MacOS M1 开源 NTFS 文件挂载软件
+MacOS M1 开源NTFS
 
-解决 MacOS 下 NTFS 文件系统无法写入问题
-
-Python3.10 使用 py2ap 打包编译
+Python3.10 使用 py2app 打包编译
 
 理论上 MacOS 全系列通用
+
+#### Python3.10 环境
+
+```shell
+brew install python@3.10
+brew install tcl-tk
+brew install python-tk@3.10
+```
+
+#### sudo 免密
+
+```
+sudo visudo
+#将 %admin          ALL = (ALL) ALL 换成下面这个
+%admin          ALL = (ALL) NOPASSWD: ALL
+```
 
 #### 安装 macfuse
 
@@ -29,4 +43,4 @@ brew install macfuse
 
 #### PS
 
-TNTFS.app.zip 是打包好的程序，下载后解压，可直接运行。
+TNTFS.zip 是打包好的程序，可直接运行。

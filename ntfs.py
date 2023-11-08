@@ -1,6 +1,8 @@
+# -*- coding: utf-8 -*-
 from tkinter import *
 from tkinter import ttk
 import subprocess
+
 
 class FeetToMeters:
 
@@ -25,10 +27,11 @@ class FeetToMeters:
 
     def find_ntfs(self):
         return_list = []
-        resp = self.shell_ini('df -h | grep ntfs://')
+        # resp = self.shell_ini('df -h | grep ntfs://')
+        resp = self.shell_ini('df -t ntfs| grep -v "512-blocks"')
         if type(resp) == bool and resp == False:
             pass
-            # print("没有NTFS")
+            print("没有NTFS")
         else:
             for i in (resp.strip("\n").split("\n")):
                 USB_disk = "/dev/" + i.strip("\n").split(" ")[0].split("/")[2]
@@ -43,12 +46,14 @@ class FeetToMeters:
             USB_info[r[0]] = {"Volumes":r[1]}
             disk_status = self.shell_ini('ls ' + r[0])
             if disk_status:
-                umount = self.shell_ini('sudo umount ' + USB_info[r[0]]["Volumes"])
-                # print("正在卸载",umount)
+                umount_shell = 'sudo umount ' + USB_info[r[0]]["Volumes"]
+                print(umount_shell)
+                umount = self.shell_ini(umount_shell)
+                print("正在卸载",umount)
                 mount_shell = "sudo /System/Volumes/Data/opt/homebrew/bin/ntfs-3g {} {} -olocal -oallow_other -o auto_xattr".format(r[0],"/Volumes/" + str(USB_info[r[0]]["Volumes"]).split("/")[-1])
-                # print(mount_shell)
+                print(mount_shell)
                 mount = self.shell_ini(mount_shell)
-                # print("正在挂载.",mount)
+                print("正在挂载.",mount)
             else:
                 pass
                 # print("磁盘不存在.")
@@ -58,3 +63,6 @@ class FeetToMeters:
 root = Tk()
 FeetToMeters(root)
 root.mainloop()
+
+
+
