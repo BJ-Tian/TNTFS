@@ -29,8 +29,9 @@ sudo visudo
 系统中启用 macfuse
 
 ```shell
-brew install ntfs-3g-mac
 brew install macfuse
+brew tap gromgit/homebrew-fuse
+brew install ntfs-3g-mac
 ```
 
 #### 运行
